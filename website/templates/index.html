@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI Hex Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side-panel">
+            <h2>TEST THE MODEL</h2>
+            <div class="input-container">
+                <input type="text" class="styled-input" placeholder="A1 B2 C3 D4..." id="textInput">
+                <div class="controls">
+                    <button id="postButton" class="styled-button">APPLY MOVES</button>
+                    <button id="getButton" class="styled-button">GET GAME</button>
+                    <button id="newGameButton" class="styled-button">NEW GAME</button>
+                </div>
+            </div>
+            <div class="toggle-container">
+                <label class="ai-rates-title" for="aiRedPlays">Red AI Agent</label>
+                <label class="toggle">
+                    <input type="checkbox" id="aiRedPlaysToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>  
+            <div class="toggle-container">
+                <label class="ai-rates-title" for="aiBluePlays">Blue AI Agent</label>
+                <label class="toggle">
+                    <input type="checkbox" id="aiBluePlaysToggle">
+                    <span class="slider"></span>
+                </label>
+            </div> 
+            <div class="log" id="gameLog"></div>
+            <div class="log-container">
+                <button class="log-button" id="prevMove">&#9664;</button>
+                <div class="current-move" id="currentMove">0</div>
+                <button class="log-button" id="nextMove">&#9654;</button>
+            </div>
+            
+        </div> 
+
+        <div id="gameBoard"></div>
+    </div>
+
+    <div class="hover-info" id="hoverInfo">ID</div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

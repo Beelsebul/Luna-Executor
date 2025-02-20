@@ -1,0 +1,346 @@
+:root {
+    --hex-width: 40px; 
+    --hex-height: calc(var(--hex-width) / 1.74);
+    --hex-margin: calc(var(--hex-width) * 0.5); 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1F1F1F;
+    margin: 0;
+    user-select: none; 
+    transition: none; 
+}
+
+h1, h2 {
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.main-title {
+    position: relative;
+    margin-top: 70px;
+    right: 120px;
+}
+
+.ai-rates-title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hexagon, .hex_special1, .hex_special2 {
+    position: relative;
+    width: var(--hex-width);
+    height: var(--hex-height);
+    margin: calc((var(--hex-height) / 4) + 1.41px) 2px;
+    display: inline-block;
+}
+
+.hexagon:before, .hexagon:after,
+.hex_special1:before, .hex_special2:before,
+.hex_special1:after, .hex_special2:after {
+    content: "";
+    position: absolute;
+    width: var(--hex-width);
+    height: var(--hex-height);
+    background-color: inherit;
+}
+
+.hexagon:before, .hex_special1:before, .hex_special2:before {
+    transform: rotate(60deg);
+}
+
+.hexagon:after, .hex_special1:after, .hex_special2:after {
+    transform: rotate(-60deg);
+}
+
+.hex_border {
+    background-color: #333333;
+}
+
+.hex_border.vertical {
+    background-color: #52BDF6;
+}
+
+.hex_border.horizontal {
+    background-color: #F65252;
+}
+
+.hex_corner {
+    background-color: #1F1F1F;
+}
+
+.hex_playable {
+    background-color: #E9E9E9;
+}
+
+.hex_playable.red {
+    background-color: #F65252;
+}
+
+.hex_playable.blue {
+    background-color: #52BDF6;
+}
+
+.hex_special1 {
+    background-color: #A488A4;
+}
+
+.hex_special2 {
+    background-color: #A488A4;
+}
+
+.hex-row {
+    display: flex;
+}
+
+.container {
+    display: flex;
+}
+
+.left-side-panel {
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: white;
+    width: 240px;
+    margin-right: 20px; 
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.styled-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: calc(100% - 24px);
+}
+
+.styled-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #555555;
+    transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: #777777;
+}
+
+.hover-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #E9E9E9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+}
+
+.hover-info.show {
+    opacity: 1;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.toggle-container label {
+    margin-right: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f44336;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.log-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.log-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.current-move {
+    background-color: #E9E9E9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: #000;
+    min-width: 50px;
+    text-align: center;
+}
+
+.log {
+    max-width: 300px;
+    white-space: normal;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #E9E9E9;
+    color: #000;
+    margin-top: 20px;
+    word-wrap: break-word;
+    min-height: 18.5px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}
+
+.victory-message {
+    font-family: Arial, Helvetica, sans-serif; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    visibility: hidden; 
+}
+
+.victory-message.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    padding: 20px;
+    visibility: visible;
+}
+
+.close-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1F1F1F;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #626262;
+}
+
+.new-game-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1F1F1F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-game-button:hover {
+    background-color: #626262;
+}
+
+@keyframes victoryAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
